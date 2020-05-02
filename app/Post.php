@@ -36,4 +36,10 @@ class Post extends Model
     public function getGetExcerptAttribute() {
         return Str::limit($this->body, 140);
     }
+
+    public function getGetImageAttribute() {
+        if($this->image) {
+            return url("storage/$this->image");
+        }
+    }
 }
